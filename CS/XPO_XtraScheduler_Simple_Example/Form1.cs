@@ -8,7 +8,7 @@ namespace XPO_XtraScheduler_Simple_Example {
         public Form1() {
             InitializeComponent();
 
-            session1.ConnectionString = DevExpress.Xpo.DB.AccessConnectionProvider.GetConnectionString("XPO_XtraScheduler_Simple_Example.mdb");
+            session1.ConnectionString = "XpoProvider=InMemoryDataStore";
 
             schedulerDataStorage1.Appointments.DataSource = xpAppointmentCollection;
             schedulerDataStorage1.Resources.DataSource = xpResourceCollection;
