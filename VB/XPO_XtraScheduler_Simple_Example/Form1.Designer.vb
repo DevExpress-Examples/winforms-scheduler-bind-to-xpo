@@ -1,5 +1,7 @@
-﻿Namespace XPO_XtraScheduler_Simple_Example
-    Partial Public Class Form1
+Namespace XPO_XtraScheduler_Simple_Example
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,32 +12,32 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim timeRuler1 As New DevExpress.XtraScheduler.TimeRuler()
-            Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler1 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler2 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
             Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
             Me.session1 = New DevExpress.Xpo.Session(Me.components)
             Me.xpAppointmentCollection = New DevExpress.Xpo.XPCollection(Me.components)
             Me.xpResourceCollection = New DevExpress.Xpo.XPCollection(Me.components)
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.session1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.xpAppointmentCollection, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.xpResourceCollection, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.session1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.xpAppointmentCollection), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.xpResourceCollection), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' schedulerControl1
@@ -44,7 +46,7 @@
             Me.schedulerControl1.Location = New System.Drawing.Point(0, 0)
             Me.schedulerControl1.Name = "schedulerControl1"
             Me.schedulerControl1.Size = New System.Drawing.Size(784, 561)
-            Me.schedulerControl1.Start = New Date(2015, 9, 29, 0, 0, 0, 0)
+            Me.schedulerControl1.Start = New System.DateTime(2015, 9, 29, 0, 0, 0, 0)
             Me.schedulerControl1.Storage = Me.schedulerStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
@@ -75,22 +77,23 @@
             Me.Controls.Add(Me.schedulerControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.session1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.xpAppointmentCollection, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.xpResourceCollection, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.session1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.xpAppointmentCollection), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.xpResourceCollection), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
+
         Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+
         Private xpAppointmentCollection As DevExpress.Xpo.XPCollection
+
         Private session1 As DevExpress.Xpo.Session
+
         Private xpResourceCollection As DevExpress.Xpo.XPCollection
     End Class
 End Namespace
-

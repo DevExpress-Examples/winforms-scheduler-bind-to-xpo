@@ -1,31 +1,25 @@
-﻿Imports DevExpress.Xpo
+Imports DevExpress.Xpo
 Imports DevExpress.XtraScheduler
-Imports System
 Imports System.Drawing
 Imports System.Windows.Forms
 
 Namespace XPO_XtraScheduler_Simple_Example
-    Partial Public Class Form1
+
+    Public Partial Class Form1
         Inherits Form
 
         Public Sub New()
             InitializeComponent()
-
-            session1.ConnectionString = DevExpress.Xpo.DB.AccessConnectionProvider.GetConnectionString("XPO_XtraScheduler_Simple_Example.mdb")
-
+            session1.ConnectionString = DB.AccessConnectionProvider.GetConnectionString("XPO_XtraScheduler_Simple_Example.mdb")
             schedulerStorage1.Appointments.DataSource = xpAppointmentCollection
             schedulerStorage1.Resources.DataSource = xpResourceCollection
-
             CreateMappings()
             InitData()
-
             AddHandler schedulerStorage1.AppointmentsChanged, AddressOf OnAppointmentsChanged
             AddHandler schedulerStorage1.AppointmentsInserted, AddressOf OnAppointmentsChanged
-
             schedulerStorage1.Appointments.ResourceSharing = False
             schedulerControl1.Views.DayView.GroupType = SchedulerGroupType.Resource
             schedulerControl1.Views.DayView.TopRowTime = Date.Now.TimeOfDay
-
         End Sub
 
         Private Sub InitData()
@@ -54,32 +48,29 @@ Namespace XPO_XtraScheduler_Simple_Example
         End Sub
 
         Private Sub CreateMappings()
-            Me.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay"
-            Me.schedulerStorage1.Appointments.Mappings.Description = "Description"
-            Me.schedulerStorage1.Appointments.Mappings.End = "Finish"
-            Me.schedulerStorage1.Appointments.Mappings.Label = "Label"
-            Me.schedulerStorage1.Appointments.Mappings.Location = "Location"
-            Me.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "Recurrence"
-            Me.schedulerStorage1.Appointments.Mappings.ReminderInfo = "Reminder"
-            Me.schedulerStorage1.Appointments.Mappings.ResourceId = "Resource!Key"
-            Me.schedulerStorage1.Appointments.Mappings.Start = "Created"
-            Me.schedulerStorage1.Appointments.Mappings.Status = "Status"
-            Me.schedulerStorage1.Appointments.Mappings.Subject = "Subject"
-            Me.schedulerStorage1.Appointments.Mappings.Type = "AppointmentType"
-
-            Me.schedulerStorage1.Resources.Mappings.Caption = "Name"
-            Me.schedulerStorage1.Resources.Mappings.Color = "Color"
-            Me.schedulerStorage1.Resources.Mappings.Id = "Oid"
-            Me.schedulerStorage1.Resources.Mappings.Image = "Image"
+            schedulerStorage1.Appointments.Mappings.AllDay = "AllDay"
+            schedulerStorage1.Appointments.Mappings.Description = "Description"
+            schedulerStorage1.Appointments.Mappings.End = "Finish"
+            schedulerStorage1.Appointments.Mappings.Label = "Label"
+            schedulerStorage1.Appointments.Mappings.Location = "Location"
+            schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "Recurrence"
+            schedulerStorage1.Appointments.Mappings.ReminderInfo = "Reminder"
+            schedulerStorage1.Appointments.Mappings.ResourceId = "Resource!Key"
+            schedulerStorage1.Appointments.Mappings.Start = "Created"
+            schedulerStorage1.Appointments.Mappings.Status = "Status"
+            schedulerStorage1.Appointments.Mappings.Subject = "Subject"
+            schedulerStorage1.Appointments.Mappings.Type = "AppointmentType"
+            schedulerStorage1.Resources.Mappings.Caption = "Name"
+            schedulerStorage1.Resources.Mappings.Color = "Color"
+            schedulerStorage1.Resources.Mappings.Id = "Oid"
+            schedulerStorage1.Resources.Mappings.Image = "Image"
         End Sub
 
         Private Sub OnAppointmentsChanged(ByVal sender As Object, ByVal e As PersistentObjectsEventArgs)
             For Each apt As Appointment In e.Objects
-                Dim o As XPBaseObject = TryCast(apt.GetSourceObject(DirectCast(sender, SchedulerStorage)), XPBaseObject)
-                If o IsNot Nothing Then
-                    o.Save()
-                End If
-            Next apt
+                Dim o As XPBaseObject = TryCast(apt.GetSourceObject(CType(sender, SchedulerStorage)), XPBaseObject)
+                If o IsNot Nothing Then o.Save()
+            Next
         End Sub
     End Class
 End Namespace
