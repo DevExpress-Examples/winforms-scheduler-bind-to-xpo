@@ -15,7 +15,7 @@ This example demonstrates how to bind the WinForms Scheduler control to in-memor
 * [Data Binding Overview - WinForms Scheduler](https://docs.devexpress.com/WindowsForms/8386/controls-and-libraries/scheduler/data-binding)
 * [.NET ORM Library (XPO)](https://docs.devexpress.com/XPO/1998/express-persistent-objects)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-bind-to-xpo&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-bind-to-xpo&~~~was_helpful=no)
 
